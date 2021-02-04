@@ -3,7 +3,6 @@
 ---start---
 ## 目录(2021年01月29日更新)
 
-[zhaoolee的Github主页](https://fangyuanxiaozhan.com/p/2020-01-17-zhaoolee/)
 
 ---end---
 
