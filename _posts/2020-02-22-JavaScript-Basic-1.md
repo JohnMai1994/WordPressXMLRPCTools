@@ -361,6 +361,95 @@ vae
 - 5. 使用 call 和 apply 调用时，this 指向指定的那个对象
 - 6. 箭头函数通过继承外层海曙调用的this绑定（无论this绑定到什么）
 
+##### 什么是Call(), Apply() 和 Bind()
+- call()
+> 可以调用一个函数，与此同时，它还可以改变这个函数内部的**this**指向
+> 可以实现继承
+
+举个例子（不需要记）=>解释call()方法
+
+```js
+// 例子1：跟普通的调用 fn1() 没有区别
+function fn1() {
+    console.log(this);
+    console.log(this.nickName);
+}
+    
+fn1.call(this); 
+// this的指向并没有被改变，此时相当于 fn1();
+
+// 打印结果
+window
+undefine
+```
+
+```js
+// 例子2：通过call() 改变this指向
+var obj1 = {
+    nickName: 'JohnnyBoy',
+    age: 28
+};
+
+function fn1(a, b) {
+    console.log(this);
+    console.log(this.nickName);
+    console.log(a + b);
+}
+
+fn1.call(obj1, 2, 4); // 先将 this 指向 obj1，然后执行 fn1() 函数
+
+// 打印结果
+obj1
+JohnnyBoy
+6
+```
+
+```js
+// 例子3：通过call()实现继承
+// 给 Father 增加 name 和 age 属性function 
+Father(myName, myAge) {
+    this.name = myName;
+    this.age = myAge;}
+
+function Son(myName, myAge) {
+    // 【下面这一行，重要代码】
+    // 通过这一步，将 father 里面的 this 修改为 Son 里面的 this；另外，给 Son 加上相应的参数，让 Son 自动拥有 Father 里的属性。最终实现继承
+    Father.call(this, myName, myAge);}
+
+const son1 = new Son('Johnny Boy', 28);
+console.log(JSON.stringify(son1));
+
+// 打印结果
+{"myName":"Johnny Boy","myAge":28}
+```
+
+- apply()
+> 可以调用一个函数，与此同时，它还可以改变这个函数内部的 this 指向。这一点，和 call()类似。
+> 
+> 由于 apply()需要传递数组，所以它有一些巧妙应用，稍后看接下来的应用举例就知道了。
+
+```js
+// 例子1：通过apply() 改变this指向
+
+var obj1 = {
+    nickName: 'qianguyihao',
+    age: 28,};
+
+function fn1(a) {
+    console.log(this);
+    console.log(this.nickName);
+    console.log(a);}
+
+fn1.apply(obj1, ['hello']); // 先将 this 指向 obj1，然后执行 fn1() 函数
+```
+
+- bind()
+> 不会调用函数，但是可以改变函数内部的this指向
+> 如果我们不需要立即调用，但是需要改变这个函数内部的this指向，使用bind()是最为合适的
+
+```js
+新函数 = fn1.bind(想要将this指向哪里，函数实参1，函数实参2)
+```
 
 ##### 什么是高阶函数（Higher Order Function）
 > 高阶函数就是 **参数或者返回值**其中之一是函数
