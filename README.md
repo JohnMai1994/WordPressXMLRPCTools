@@ -1,7 +1,9 @@
 # 麦萌Github仓库
 
 ---start---
-## 目录(2021年02月27日更新)
+## 目录(2021年03月01日更新)
+[JavaScript基础小结（二）](http://www.jiadong.live/p/2020-02-22-JavaScript-Basic-2/)
+
 [JavaScript基础小结（一）](http://www.jiadong.live/p/2020-02-22-JavaScript-Basic-1/)
 
 [HTTP状态码](http://www.jiadong.live/p/2020-02-10-Http-Status-Code/)
