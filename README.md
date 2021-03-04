@@ -2,6 +2,8 @@
 
 ---start---
 ## 目录(2021年03月04日更新)
+[React Hook小结（二）--- useEffect](http://www.jiadong.live/p/2020-03-03-ReactJS-Hook-2/)
+
 [React Hook小结（一）--- Hook介绍和useState](http://www.jiadong.live/p/2020-03-01-ReactJS-Hook-1/)
 
 [JavaScript基础小结（二）](http://www.jiadong.live/p/2020-02-22-JavaScript-Basic-2/)
