@@ -1,7 +1,7 @@
 # 麦萌Github仓库
 
 ---start---
-## 目录(2021年03月04日更新)
+## 目录(2021年03月06日更新)
 [Git总结](http://www.jiadong.live/p/2020-03-04-Git/)
 
 [React Hook小结（二）--- useEffect](http://www.jiadong.live/p/2020-03-03-ReactJS-Hook-2/)
